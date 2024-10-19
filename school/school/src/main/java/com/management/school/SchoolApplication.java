@@ -8,6 +8,16 @@ public class SchoolApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SchoolApplication.class, args);
+		createdefaultdata();
+	}
+	
+	public static void createdefaultdata()
+	{
+		createdefaultdataforDepartments();
+	}
+	public static void createdefaultdataforDepartments()
+	{
+		
 	}
 
 }
