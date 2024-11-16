@@ -35,6 +35,10 @@ public class TeacherBO {
 		this.salary = salary;
 	}
 	
+	public TeacherBO() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="teacher_id")

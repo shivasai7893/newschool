@@ -3,6 +3,9 @@ package com.management.school.entity;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -33,6 +36,10 @@ public class StudentBO {
 		this.enrollmentDate = enrollmentDate;
 	}
 	
+	public StudentBO() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="student_id")
@@ -46,6 +53,7 @@ public class StudentBO {
     
     @ManyToOne
     @JoinColumn(name = "department_id")
+    @JsonIgnore
     private DepartmentBO department;
     
     @ManyToMany
@@ -54,6 +62,7 @@ public class StudentBO {
         joinColumns = @JoinColumn(name = "student_id"),
         inverseJoinColumns = @JoinColumn(name = "subject_id")
     ) 
+    @JsonIgnore
     private List<SubjectBO> subjects;
     
     private String address;

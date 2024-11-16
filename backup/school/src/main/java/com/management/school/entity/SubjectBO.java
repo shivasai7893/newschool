@@ -30,6 +30,10 @@ public class SubjectBO {
 		this.students = students;
 	}
 	    
+	    public SubjectBO() {
+			// TODO Auto-generated constructor stub
+		}
+	    
 	    @Id
 		@GeneratedValue(strategy=GenerationType.IDENTITY)
 		@Column(name="subject_id")

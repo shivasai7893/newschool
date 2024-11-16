@@ -27,6 +27,10 @@ public class PrincipalAdminBO {
 		this.salary = salary;
 	}
 	    
+	     public PrincipalAdminBO() {
+			// TODO Auto-generated constructor stub
+		} 
+	    
 	    @Id
 		@GeneratedValue(strategy=GenerationType.IDENTITY)
 		@Column(name="principaladmin_id")

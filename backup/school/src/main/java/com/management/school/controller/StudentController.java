@@ -42,13 +42,13 @@ public class StudentController {
 	        return ResponseEntity.noContent().build();
 	    }
 
-	    @GetMapping("/{id}")
+	    @GetMapping("ind/{id}")
 	    public ResponseEntity<StudentBO> getStudentById(@PathVariable Integer id) {
 	        StudentBO student = studentService.getStudentById(id);
 	        return ResponseEntity.ok(student);
 	    }
 
-	    @GetMapping
+	    @GetMapping("/all")
 	    public ResponseEntity<List<StudentBO>> getAllStudents() {
 	        List<StudentBO> students = studentService.getAllStudents();
 	        return ResponseEntity.ok(students);

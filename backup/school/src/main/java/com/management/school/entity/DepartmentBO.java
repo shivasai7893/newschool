@@ -2,6 +2,9 @@ package com.management.school.entity;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,6 +29,7 @@ public class DepartmentBO {
 		this.students = students;
 		this.teachers = teachers;
 	}
+	public DepartmentBO() {}
 	
 	
 	@Id
@@ -37,12 +41,15 @@ public class DepartmentBO {
     
     @OneToOne
     @JoinColumn(name = "head_id")
+    @JsonIgnore
     private TeacherBO head;
     
     @OneToMany(mappedBy = "department")
+    @JsonIgnore
     private List<StudentBO> students;
     
     @OneToMany(mappedBy = "department")
+    @JsonIgnore
     private List<TeacherBO> teachers;
     
 	public Integer getId() {
