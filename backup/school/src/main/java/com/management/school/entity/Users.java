@@ -28,7 +28,13 @@ public class Users {
     @Column(name="password")
     private String password;
 
-    @Column(name="name")
+    @Override
+	public String toString() {
+		return "Users [id=" + id + ", email=" + email + ", password=" + password + ", name=" + name + ", lastName="
+				+ lastName + ", active=" + active + ", roles=" + roles + "]";
+	}
+
+	@Column(name="name")
     private String name;
 
     @Column(name="last_name")

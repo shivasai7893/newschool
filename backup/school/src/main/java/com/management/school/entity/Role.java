@@ -11,6 +11,11 @@ import jakarta.persistence.Table;
 @Table(name="role")
 public class Role {
 	
+	@Override
+	public String toString() {
+		return "Role [roleId=" + roleId + ", role=" + role + "]";
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="role_id")
